@@ -54,8 +54,8 @@ function showRandomQuote() {
   `;
 }
 
-// Add a new quote to the collection
-function addQuote() {
+// Add a new quote to the collection - NOW GLOBALLY ACCESSIBLE
+window.addQuote = function() {
   const textInput = document.getElementById('newQuoteText');
   const categoryInput = document.getElementById('newQuoteCategory');
   
