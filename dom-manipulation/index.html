@@ -8,36 +8,42 @@
 <body>
   <h1>Dynamic Quote Generator</h1>
 
+  <!-- 🎯 Filter Section -->
   <div>
-    <label for="categorySelect">Choose Category:</label>
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterQuote()">
+      <option value="all">All Categories</option>
+    </select>
+  </div>
+
+  <!-- 🎲 Quote Display -->
+  <div id="quoteDisplay" style="margin: 20px 0; font-style: italic;">
+    <!-- Displayed quote will appear here -->
+  </div>
+
+  <!-- 🔄 Generate Random Quote from Selected Category -->
+  <div>
+    <label for="categorySelect">Choose Category for Random Quote:</label>
     <select id="categorySelect">
       <option value="all">All</option>
     </select>
     <button id="newQuote">Show New Quote</button>
   </div>
-<!-- Category Filter Dropdown -->
-<div>
-  <label for="categoryFilter">Filter by Category:</label>
-  <select id="categoryFilter" onchange="filterQuotes()">
-    <option value="all">All Categories</option>
-  </select>
-</div>
 
-
-  <div id="quoteDisplay" style="margin: 20px 0; font-style: italic;"></div>
-
-  <div>
+  <!-- ➕ Add a New Quote -->
+  <div style="margin-top: 20px;">
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
     <button onclick="addQuote()">Add Quote</button>
   </div>
 
-  <!-- JSON Import/Export -->
+  <!-- 📤 Import/Export JSON -->
   <div style="margin-top: 20px;">
     <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
     <button onclick="exportToJsonFile()">Export Quotes to JSON</button>
   </div>
 
+  <!-- 📜 Script -->
   <script src="script.js"></script>
 </body>
 </html>
